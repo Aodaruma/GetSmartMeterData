@@ -1,0 +1,12 @@
+[Unit]
+Description=Send SmartMeter Data to HomeAssistant
+After=network.target
+
+[Service]
+WorkingDirectory=/home/debian/GetSmartMeterData
+ExecStart=//home/debian/GetSmartMeterData/.venv/bin/python /home/debian/GetSmartMeterData/GetSmartMeterData.py
+Restart=always
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
